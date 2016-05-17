@@ -13,10 +13,7 @@
     /* JQL query goes here */
 
     function main() {
-      return People()
-      .filter(function(scorecard){
-  	    return params.id_list.indexOf(scorecard.distinct_id) > -1;
-      });
+      return People();
     }
     </script>
     
@@ -24,10 +21,10 @@
     var script = $('#jql').html();
     script = $.trim(script);
     console.log(script);
-    var params = {'id_list':['3', '842929']};
+    var params = {};
     MP.api.jql(script,params).done(function(results) {
       console.log(results);
-      document.getElementById('results').innerHTML += results;
+      //document.getElementById('results').innerHTML += results;
     });
     </script>
 
