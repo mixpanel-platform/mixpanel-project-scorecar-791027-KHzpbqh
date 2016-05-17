@@ -14,7 +14,7 @@
     function main() {
       return People()
       .filter(function(scorecard){
-  	    return scorecard.distinct_id == 3;
+  	    return scorecard.distinct_id == params.id_list[0];
       });
     }
     </script>
@@ -23,7 +23,7 @@
     var script = $('#jql').html();
     script = $.trim(script);
     console.log(script);
-    var params = {};
+    var params = {'id_list':[3]};
     MP.api.jql(script).done(function(results) {
       console.log(results);
       document.getElementById('results').innerHTML += results;
