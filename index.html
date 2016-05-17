@@ -12,7 +12,10 @@
     <script id="jql">
     /* JQL query goes here */
     function main() {
-      return People();
+      return People()
+      .filter(function(scorecard){
+  	    return params.id_list == scorecard.distinct_id;
+      });
     }
     </script>
     
