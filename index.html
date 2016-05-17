@@ -14,7 +14,7 @@
     function main() {
       return People()
       .filter(function(scorecard){
-  	    return scorecard.distinct_id == params.id_list[0];
+  	    return params.id_list.indexOf(scorecard.distinct_id) > -1;
       });
     }
     </script>
