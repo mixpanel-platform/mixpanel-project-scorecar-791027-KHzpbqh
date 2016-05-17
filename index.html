@@ -11,15 +11,11 @@
     
     <script id="jql">
     /* JQL query goes here */
-    
-    function isInArray(value, array) {
-      return array.indexOf(value) > -1;
-    }
-        
+
     function main() {
       return People()
       .filter(function(scorecard){
-  	    return isInArray(scorecard.distinct_id, params.id_list);
+  	    return params.id_list.indexOf(scorecard.distinct_id) > -1;
       });
     }
     </script>
