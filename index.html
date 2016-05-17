@@ -12,7 +12,7 @@
     var script = $('#jql').html();
     script = $.trim(script);
     var params = {};
-    MP.api.jql(script, params).done(function(results) {
+    MP.api.jql(script).done(function(results) {
       console.log(results);
       document.getElementById('results').innerHTML += results;
     });
