@@ -7,19 +7,20 @@
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
   </head>
   <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
+    <div id="results"></div>
     <script>
     var script = $('#jql').html();
     script = $.trim(script);
     MP.api.jql(script, params).done(function(results) {
       console.log(results);
+      document.getElementById('results').innerHTML += results;
     });
     </script>
     
     <script type="text/cq" id="jql">
     /* JQL query goes here */
     function main() {
-      
+      return People();
     }
     </script>
   </body>
