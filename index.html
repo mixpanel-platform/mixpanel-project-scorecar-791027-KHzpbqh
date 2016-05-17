@@ -24,7 +24,7 @@
     script = $.trim(script);
     console.log(script);
     var params = {'id_list':[3]};
-    MP.api.jql(script).done(function(results) {
+    MP.api.jql(script,params).done(function(results) {
       console.log(results);
       document.getElementById('results').innerHTML += results;
     });
