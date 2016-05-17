@@ -8,6 +8,14 @@
   </head>
   <body class="mixpanel-platform-body">
     <div id="results"></div>
+    
+    <script id="jql">
+    /* JQL query goes here */
+    function main() {
+      return People();
+    }
+    </script>
+    
     <script>
     var script = $('#jql').html();
     script = $.trim(script);
@@ -18,12 +26,6 @@
       document.getElementById('results').innerHTML += results;
     });
     </script>
-    
-    <script id="jql">
-    /* JQL query goes here */
-    function main() {
-      return People();
-    }
-    </script>
+
   </body>
 </html>
