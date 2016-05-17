@@ -9,11 +9,18 @@
   <body class="mixpanel-platform-body">
     <h1>Hello, World!</h1>
     <script>
-    var script = $('#cq').html();
+    var script = $('#jql').html();
     script = $.trim(script);
     MP.api.jql(script, params).done(function(results) {
       console.log(results);
     });
+    </script>
+    
+    <script type="text/cq" id="jql">
+    /* JQL query goes here */
+    function main() {
+      
+    }
     </script>
   </body>
 </html>
