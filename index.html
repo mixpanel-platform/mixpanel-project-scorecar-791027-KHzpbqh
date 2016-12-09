@@ -13,15 +13,24 @@
     /* JQL query goes here */
 
     function main() {
-      return People();
+      return Events({
+        from_date: '2016-12-08',
+        to_date:   '2016-12-09'
+      })
+      .groupBy(["name"], mixpanel.reducer.count());
     }
     </script>
     
     <script>
+    // Set JQL as variable
     var script = $('#jql').html();
     script = $.trim(script);
-    console.log(script);
+    //console.log(script);
+    
+    // Set any parameters to pass to JQL 
     var params = {};
+    
+    // Run JQL
     MP.api.jql(script,params).done(function(results) {
       console.log(results);
       //document.getElementById('results').innerHTML += results;
